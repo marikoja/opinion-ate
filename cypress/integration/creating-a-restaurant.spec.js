@@ -25,10 +25,10 @@ describe ('Creating a restaurant', () => {
         cy.get('[placeholder="Add Restaurant"]').type(restaurantName);
         cy.contains('Add').click();
 
-        cy.wait('@addRestaurant').its('resquestBody').should('deep.equal', {
+        cy.wait('@addRestaurant').its('requestBody').should('deep.equal', {
             name: restaurantName,
         });
-
+        
         cy.contains(restaurantName);
-    });
-});
+    })
+})
